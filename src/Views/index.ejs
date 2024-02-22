@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>Chatgpt</title>
+  </head>
+  <body>
+
+    <div class="chatbox-wrapper">
+      <div class="message-box">
+        <% for (var key in listtext) { %>
+            <% if(listtext[key].chatgptcode ==1){ %>
+                <div class="chat response">
+                    <img src="/img/chatbot.jpg" />
+                    <span>
+                        <%=listtext[key].text %>
+                    </span>
+                  </div>
+              <% } else{ %>
+                <div class="chat message">
+                    <img src="/img/user.png" />
+                    <span> <%=listtext[key].text %> </span>
+                  </div>
+              <% } %>
+            
+        <% } %>
+      </div>
+      <form action="/" method="post">
+        <div class="messagebar">
+            <div class="bar-wrapper">
+              <input type="text" name="keyword" placeholder="Nhập thông tin tìm kiếm..." />
+              <button type="submit">
+                <span class="material-symbols-rounded"> send </span>
+              </button>
+            </div>
+          </div>
+      </form>
+      
+    </div>
+  </body>
+</html>
